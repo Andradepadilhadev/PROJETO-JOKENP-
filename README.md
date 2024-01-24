@@ -18,7 +18,7 @@ Celebre suas vitórias com animações que realçam a conquista, tornando a expe
 Layout Responsivo: Aprecie uma interface adaptável a diversos tamanhos de tela. 📱
 Consistência visual garantida em smartphones, tablets e desktops, graças ao design responsivo. 🌐
 
-***Apresentação do Projeto*** => [Clique aqui]() e confira a proposta do projeto.
+***Apresentação do Projeto*** => [Clique aqui](https://andrade-jokenpo-devclub.netlify.app) e confira a proposta do projeto.
                                     
  <p/>
  jogo Jokenpo foi CUIDADOSAMENTE desenvolvido com as mais avançadas TECNOLOGIAS: JavaScript, HTML e CSS, proporcionando uma experiência  INTUITIVA para os usuários! 🚀✨
