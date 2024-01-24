@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./scripti.js" defer></script>
+    <title>JokenPô DevClub</title>
+    <link rel="icon" href="imagen-favicon.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="imagen-favicon.png" type="image/png" />
+  </head>
+  <body>
+    <h1>joken&nbsp;<span>Pô</span></h1>
+    <div class="container">
+      <div class="buttons">
+        <button id="rock" onclick="playHuman(`rock`)">&#129704;</button>
+        <button id="paper" onclick="playHuman(`paper`)">&#x1F4C4;</button>
+        <button id="scissors" onclick="playHuman(`scissors`)">
+          &#9986;&#65039;
+        </button>
+      </div>
+
+      <br />
+      <p class="p1">Sua pontuação: <span id="human-score">0</span></p>
+      <br />
+      <p class="p2">pontuação da Alexa: <span id="machine-score">0</span></p>
+      <br />
+      <div><p class="result"></p></div>
+      <div id="emojiContainer">
+        <div id="emoji" class="emoji1"></div>
+        <div id="emoji2" class="emoji2"></div>
+        <div id="emoji2" class="emoji3"></div>
+      </div>
+    </div>
+  </body>
+</html>

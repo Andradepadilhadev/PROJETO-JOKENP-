@@ -1,0 +1,269 @@
+/* Reset padrão para evitar espaçamentos indesejados e garantir a caixa-modelo padrão */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bungee", sans-serif;
+}
+
+/* Estilo básico para o corpo da página */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("./img/imagen-background.png "); /* Substitua pelo caminho real da sua imagem */
+  background-size: cover; /* Garante que a imagem de fundo cubra toda a tela */
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* Evita a repetição da imagem de fundo */
+}
+
+/* Estilo para o título principal */
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+  font-size: 10vh;
+  min-height: 10%;
+  color: rgb(9, 48, 35);
+  width: 100vh;
+  height: 20vh;
+  animation: tada 12s infinite; /* Adiciona animação "rubberBand" */
+}
+h1 span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  color: rgb(99, 17, 119);
+}
+
+/* Estilo para o contêiner principal */
+.container {
+  padding: -20px; /* Parece ser um erro de digitação, talvez você quis dizer "20px" */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 100%;
+  width: 100%;
+}
+
+/* Estilo para o botão principal */
+button {
+  padding: 1vh;
+  font-size: 15vh;
+  cursor: pointer;
+  background-color: rgba(22, 119, 126, 0);
+  border: none;
+  border-radius: 18vh;
+  margin-top: 225px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o parágrafo */
+p {
+  font-weight: bold;
+  font-size: 3vh;
+  margin-top: -50px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para classes específicas de parágrafos */
+.p1,
+.p2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para o resultado do jogo */
+.result.win {
+  animation: animate__flash 4s infinite;
+}
+.result {
+  color: rgba(99, 17, 119, 0.877);
+}
+
+/* Estilo para emojis */
+.emoji {
+  width: 110px;
+  height: 110px;
+  top: 80%;
+  position: absolute;
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Estilo para a classe p1 e seu span correspondente */
+.p1 span,
+.p1 {
+  color: rgb(39, 68, 40);
+}
+
+/* Estilo para a classe p2 e seu span correspondente */
+.p2 span {
+  color: rgb(99, 17, 119);
+}
+.p1 {
+  color: rgb(99, 17, 119);
+}
+.p2 {
+  color: rgb(39, 68, 40);
+}
+
+/* Adicione a seguinte parte para tornar a imagem de fundo responsiva */
+@media screen and (max-width: 1280px) {
+  body {
+    background-size: cover;
+  }
+
+  h1 {
+    font-size: 5vw;
+  }
+
+  button {
+    padding: 2vw;
+    font-size: 6vw;
+    border-radius: 5vw;
+  }
+
+  p {
+    font-size: 2vw;
+  }
+  .emoji {
+    width: 130px;
+    height: 130px;
+    top: 73%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  body {
+    background-size: cover;
+  }
+
+  h1 {
+    font-size: 9vw;
+  }
+
+  button {
+    padding: 5vw;
+    font-size: 8vw;
+    border-radius: 5vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
+  .emoji {
+    width: 130px;
+    height: 130px;
+    top: 67%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    background-size: cover;
+  }
+  h1 {
+    font-size: 10vw;
+  }
+
+  button {
+    padding: 5vw;
+    font-size: 10vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
+  .emoji {
+    width: 100px;
+    height: 100px;
+    top: 73%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  body {
+    background-size: cover;
+  }
+  h1 {
+    font-size: 15vw;
+  }
+
+  button {
+    padding: 1vw;
+    font-size: 20vw;
+    flex-direction: row;
+  }
+
+  p {
+    font-size: 6vw;
+  }
+  .emoji {
+    width: 75px;
+    height: 75px;
+    top: 83%;
+  }
+}
+@media screen and (max-width: 360px) {
+  body {
+    background-size: cover;
+  }
+  h1 {
+    font-size: 15vw;
+    top: 15%;
+  }
+
+  button {
+    padding: 2vw;
+    font-size: 20vw;
+    flex-direction: row;
+  }
+
+  p {
+    font-size: 6vw;
+  }
+  .emoji {
+    width: 80px;
+    height: 80px;
+    top: 81%;
+  }
+}
+@media screen and (max-width: 162px) {
+  body {
+    background-size: cover;
+  }
+  h1 {
+    font-size: 15vw;
+    top: 98%;
+  }
+
+  button {
+    padding: 0vw;
+    font-size: 10vw;
+    flex-direction: row;
+  }
+
+  p {
+    font-size: 6vw;
+  }
+  .emoji {
+    width: 35px;
+    height: 35px;
+    top: 175%;
+  }
+}
