@@ -173,27 +173,26 @@ p {
     top: 67%;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   body {
     background-size: cover;
   }
   h1 {
-    font-size: 13vw;
-    top: 15%;
+    font-size: 10vw;
   }
 
   button {
-    padding: 8vw;
-    font-size: 15vw;
+    padding: 5vw;
+    font-size: 10vw;
   }
 
   p {
-    font-size: 6vw;
+    font-size: 3vw;
   }
   .emoji {
-    width: 175px;
-    height: 175px;
-    top: 70%;
+    width: 100px;
+    height: 100px;
+    top: 73%;
   }
 }
 
