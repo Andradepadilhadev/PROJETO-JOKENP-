@@ -12,10 +12,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url("./img/imagen-background.png "); /* Substitua pelo caminho real da sua imagem */
-  background-size: cover; /* Garante que a imagem de fundo cubra toda a tela */
-  background-position: center; /* Centraliza a imagem de fundo */
-  background-repeat: no-repeat; /* Evita a repetição da imagem de fundo */
+  background-image: url("./img/imagen-background.png"); /* Imagem de fundo da página */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: fixed;
+  overflow: hidden; /* Mantenha a rolagem padrão do corpo */
 }
 
 /* Estilo para o título principal */
@@ -25,12 +28,13 @@ h1 {
   align-items: center;
   position: absolute;
   top: 5%;
-  font-size: 10vh;
+  left: 57vh;
+  font-size: 12.5vh;
   min-height: 10%;
   color: rgb(9, 48, 35);
   width: 100vh;
   height: 20vh;
-  animation: tada 12s infinite; /* Adiciona animação "rubberBand" */
+  animation: tada 12s infinite;
 }
 h1 span {
   display: flex;
@@ -42,7 +46,8 @@ h1 span {
 
 /* Estilo para o contêiner principal */
 .container {
-  padding: -20px; /* Parece ser um erro de digitação, talvez você quis dizer "20px" */
+  position: fixed;
+  padding: 20px; /* Corrigido para 20 pixels */
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -54,17 +59,23 @@ h1 span {
 
 /* Estilo para o botão principal */
 button {
+  position: relative;
   padding: 1vh;
   font-size: 15vh;
   cursor: pointer;
   background-color: rgba(22, 119, 126, 0);
   border: none;
   border-radius: 18vh;
-  margin-top: 225px; /* Ajuste conforme necessário */
+  margin-top: 5%; /* Ajuste conforme necessário usando porcentagem ou outras unidades relativas */
+  left: 105vh;
+  top: 10vh;
 }
 
 /* Estilo para o parágrafo */
 p {
+  left: 105vh;
+  top: 16vh;
+  position: relative;
   font-weight: bold;
   font-size: 3vh;
   margin-top: -50px; /* Ajuste conforme necessário */
@@ -88,12 +99,12 @@ p {
 
 /* Estilo para emojis */
 .emoji {
-  width: 110px;
-  height: 110px;
-  top: 80%;
+  width: 125px;
+  height: 125px;
   position: absolute;
+  top: 10vh;
+  z-index: 10; /* Ajuste conforme necessário para garantir que o emoji esteja acima de outros elementos */
 }
-
 /* Animação de pulsação */
 @keyframes pulse {
   0% {
@@ -127,143 +138,241 @@ p {
 /* Adicione a seguinte parte para tornar a imagem de fundo responsiva */
 @media screen and (max-width: 1280px) {
   body {
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto; /* Mantenha a rolagem padrão do corpo */
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
   }
 
   h1 {
-    font-size: 5vw;
+    font-size: 6.5vw;
+    top: 5%;
+    left: 30vh;
   }
 
   button {
-    padding: 2vw;
-    font-size: 6vw;
-    border-radius: 5vw;
+    padding: 3vw;
+    font-size: 7vw;
+    flex-direction: row;
+    margin-top: 18%;
+    left: 80vh;
   }
 
   p {
     font-size: 2vw;
-  }
-  .emoji {
-    width: 130px;
-    height: 130px;
-    top: 73%;
+    transform: translateY(25%);
+    left: 80vh;
+    top: 10vh;
   }
 }
+.emoji {
+  width: 100px;
+  height: 100px;
+  top: 4vh;
+  transform: translateY(-85%);
+}
+
 @media only screen and (max-width: 992px) {
   body {
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
   }
 
   h1 {
-    font-size: 9vw;
+    font-size: 8vw;
+    top: 15%;
+    left: 12vh;
   }
 
   button {
-    padding: 5vw;
-    font-size: 8vw;
-    border-radius: 5vw;
+    padding: 3vw;
+    font-size: 10vw;
+    flex-direction: row;
+    margin-top: 25%;
+    left: 62vh;
   }
 
   p {
     font-size: 3vw;
-  }
-  .emoji {
-    width: 130px;
-    height: 130px;
-    top: 67%;
+    transform: translateY(25%);
+    left: 60vh;
+    top: 5vh;
   }
 }
+.emoji {
+  width: 100px;
+  height: 100px;
+  top: 10vh; /* Ajuste conforme necessário */
+  transform: translateY(-85%);
+}
+
 @media screen and (max-width: 768px) {
   body {
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto; /* Mantenha a rolagem padrão do corpo */
   }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
+  }
+
   h1 {
     font-size: 10vw;
+    top: 15%;
+    left: -3vh;
   }
 
   button {
-    padding: 5vw;
-    font-size: 10vw;
+    padding: 3vw;
+    font-size: 13vw;
+    flex-direction: row;
+    margin-top: 15%;
+    left: 48vh;
   }
 
   p {
     font-size: 3vw;
-  }
-  .emoji {
-    width: 100px;
-    height: 100px;
-    top: 73%;
+    transform: translateY(25%);
+    left: 50vh;
+    top: 15vh;
   }
 }
 
 @media screen and (max-width: 430px) {
   body {
-    background-size: cover;
-  }
-  h1 {
-    font-size: 15vw;
-  }
-
-  button {
-    padding: 1vw;
-    font-size: 20vw;
-    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
 
-  p {
-    font-size: 6vw;
+  .content-container {
+    position: relative;
+    z-index: 1;
   }
-  .emoji {
-    width: 75px;
-    height: 75px;
-    top: 83%;
-  }
-}
-@media screen and (max-width: 360px) {
-  body {
-    background-size: cover;
-  }
+
   h1 {
     font-size: 15vw;
     top: 15%;
+    left: -23vh;
   }
 
   button {
-    padding: 2vw;
-    font-size: 20vw;
+    padding: 3vw;
+    font-size: 15vw;
     flex-direction: row;
+    margin-top: 30%;
+    left: 27vh;
+  }
+
+  p {
+    font-size: 5vw;
+    transform: translateY(25%);
+    left: 25vh;
+    top: 17vh;
+  }
+}
+.emoji {
+  width: 100px;
+  height: 100px;
+  top: 8vh;
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto; /* Mantenha a rolagem padrão do corpo */
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 15vw;
+    top: 15%;
+    left: -27vh;
+  }
+
+  button {
+    padding: 3vw;
+    font-size: 15vw;
+    flex-direction: row;
+    margin-top: 45%;
+    left: 22vh;
   }
 
   p {
     font-size: 6vw;
+    transform: translateY(25%);
+    top: 17vh;
+    left: 23vh;
   }
+
   .emoji {
     width: 80px;
     height: 80px;
-    top: 81%;
+    top: 10vh;
+    transform: translateY(-85%);
   }
 }
+
 @media screen and (max-width: 162px) {
   body {
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto; /* Mantenha a rolagem padrão do corpo */
   }
+
   h1 {
     font-size: 15vw;
-    top: 98%;
+    top: 30%;
+    left: -40vh;
   }
 
   button {
-    padding: 0vw;
-    font-size: 10vw;
+    padding: 3vw;
+    font-size: 12.5vw;
     flex-direction: row;
+    margin-top: 175%;
+    left: 9vh;
+    top: 2vh;
   }
 
   p {
-    font-size: 6vw;
+    font-size: 7vw;
+    transform: translateY(25%);
+    top: 18vh;
+    left: 9vh;
   }
+
   .emoji {
-    width: 35px;
-    height: 35px;
-    top: 175%;
+    width: 40px;
+    height: 40px;
+    top: 5vh;
+    transform: translateY(-85%);
   }
 }
