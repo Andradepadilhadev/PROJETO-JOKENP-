@@ -8,7 +8,7 @@
 
 /* Estilo básico para o corpo da página */
 body {
-  display: flex;
+  display: inline;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -17,30 +17,28 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  position: fixed;
   overflow: hidden; /* Mantenha a rolagem padrão do corpo */
 }
 
+/* Estilo para o título principal */
 /* Estilo para o título principal */
 h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 5%;
-  left: 57vh;
-  font-size: 12.5vh;
-  min-height: 10%;
+  height: 30vh;
+  left: 50%; /* Posiciona o elemento no centro horizontalmente */
+  transform: translateX(-50%); /* Corrige o posicionamento usando translate */
+  margin: 0;
+  font-size: 11vh;
   color: rgb(9, 48, 35);
-  width: 100vh;
-  height: 20vh;
   animation: tada 12s infinite;
 }
+
 h1 span {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh;
   color: rgb(99, 17, 119);
 }
 
@@ -59,24 +57,24 @@ h1 span {
 
 /* Estilo para o botão principal */
 button {
-  position: relative;
-  padding: 1vh;
+  display: inline;
+  justify-content: center;
+  margin-top: 30vh;
   font-size: 15vh;
   cursor: pointer;
   background-color: rgba(22, 119, 126, 0);
   border: none;
   border-radius: 18vh;
-  margin-top: 5%; /* Ajuste conforme necessário usando porcentagem ou outras unidades relativas */
-  left: 105vh;
-  top: 10vh;
+  margin-top: -1vh;
 }
 
 /* Estilo para o parágrafo */
 p {
-  left: 105vh;
-  top: 16vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10vh;
   position: relative;
-  font-weight: bold;
   font-size: 3vh;
   margin-top: -50px; /* Ajuste conforme necessário */
 }
@@ -99,11 +97,12 @@ p {
 
 /* Estilo para emojis */
 .emoji {
+  position: relative;
+  justify-content: center;
+  display: inline;
   width: 125px;
   height: 125px;
-  position: absolute;
-  top: 10vh;
-  z-index: 10; /* Ajuste conforme necessário para garantir que o emoji esteja acima de outros elementos */
+  top: 50vh;
 }
 /* Animação de pulsação */
 @keyframes pulse {
@@ -136,24 +135,20 @@ p {
 }
 
 /* Adicione a seguinte parte para tornar a imagem de fundo responsiva */
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 610px) {
   body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: auto; /* Mantenha a rolagem padrão do corpo */
-  }
-
-  .content-container {
-    position: relative;
-    z-index: 1;
   }
 
   h1 {
-    font-size: 6.5vw;
-    top: 5%;
-    left: 30vh;
+    display: flex;
+    justify-content: center;
+    top: -5%;
+    left: -25vh;
+    font-size: 9vh;
   }
 
   button {
@@ -165,10 +160,13 @@ p {
   }
 
   p {
-    font-size: 2vw;
-    transform: translateY(25%);
-    left: 80vh;
+    display: fixed;
+    justify-content: center;
+    align-items: center;
     top: 10vh;
+    position: static;
+    font-size: 1vh;
+    margin-top: 20; /* Ajuste conforme necessário */
   }
 }
 .emoji {
@@ -178,7 +176,8 @@ p {
   transform: translateY(-85%);
 }
 
-@media only screen and (max-width: 992px) {
+/* Adicione a seguinte parte para tornar a imagem de fundo responsiva */
+@media screen and (max-width: 610px) {
   body {
     display: flex;
     justify-content: center;
@@ -186,193 +185,34 @@ p {
     min-height: 100vh;
   }
 
-  .content-container {
-    position: relative;
-    z-index: 1;
-  }
-
   h1 {
-    font-size: 8vw;
-    top: 15%;
-    left: 12vh;
+    display: flex;
+    justify-content: center;
+    margin-top: -75%;
+    font-size: 8vh;
   }
 
   button {
     padding: 3vw;
-    font-size: 10vw;
+    font-size: 11vw;
     flex-direction: row;
-    margin-top: 25%;
-    left: 62vh;
+    margin-top: 30vh;
+    left: 80vh;
   }
 
   p {
-    font-size: 3vw;
-    transform: translateY(25%);
-    left: 60vh;
-    top: 5vh;
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    position: static;
+    font-size: 2vh;
+    margin-top: -5vh; /* Ajuste conforme necessário */
   }
 }
 .emoji {
   width: 100px;
   height: 100px;
-  top: 10vh; /* Ajuste conforme necessário */
+  top: 4vh;
   transform: translateY(-85%);
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: auto; /* Mantenha a rolagem padrão do corpo */
-  }
-
-  .content-container {
-    position: relative;
-    z-index: 1;
-  }
-
-  h1 {
-    font-size: 10vw;
-    top: 15%;
-    left: -3vh;
-  }
-
-  button {
-    padding: 3vw;
-    font-size: 13vw;
-    flex-direction: row;
-    margin-top: 15%;
-    left: 48vh;
-  }
-
-  p {
-    font-size: 3vw;
-    transform: translateY(25%);
-    left: 50vh;
-    top: 15vh;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  .content-container {
-    position: relative;
-    z-index: 1;
-  }
-
-  h1 {
-    font-size: 15vw;
-    top: 15%;
-    left: -23vh;
-  }
-
-  button {
-    padding: 3vw;
-    font-size: 15vw;
-    flex-direction: row;
-    margin-top: 30%;
-    left: 27vh;
-  }
-
-  p {
-    font-size: 5vw;
-    transform: translateY(25%);
-    left: 25vh;
-    top: 17vh;
-  }
-}
-.emoji {
-  width: 100px;
-  height: 100px;
-  top: 8vh;
-}
-
-@media screen and (max-width: 360px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: auto; /* Mantenha a rolagem padrão do corpo */
-  }
-
-  .content-container {
-    position: relative;
-    z-index: 1;
-  }
-
-  h1 {
-    font-size: 15vw;
-    top: 15%;
-    left: -27vh;
-  }
-
-  button {
-    padding: 3vw;
-    font-size: 15vw;
-    flex-direction: row;
-    margin-top: 45%;
-    left: 22vh;
-  }
-
-  p {
-    font-size: 6vw;
-    transform: translateY(25%);
-    top: 17vh;
-    left: 23vh;
-  }
-
-  .emoji {
-    width: 80px;
-    height: 80px;
-    top: 10vh;
-    transform: translateY(-85%);
-  }
-}
-
-@media screen and (max-width: 162px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: auto; /* Mantenha a rolagem padrão do corpo */
-  }
-
-  h1 {
-    font-size: 15vw;
-    top: 30%;
-    left: -40vh;
-  }
-
-  button {
-    padding: 3vw;
-    font-size: 12.5vw;
-    flex-direction: row;
-    margin-top: 175%;
-    left: 9vh;
-    top: 2vh;
-  }
-
-  p {
-    font-size: 7vw;
-    transform: translateY(25%);
-    top: 18vh;
-    left: 9vh;
-  }
-
-  .emoji {
-    width: 40px;
-    height: 40px;
-    top: 5vh;
-    transform: translateY(-85%);
-  }
 }
