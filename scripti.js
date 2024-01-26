@@ -3,8 +3,16 @@ const result = document.querySelector(".result");
 const humanScore = document.querySelector("#human-score");
 const machineScore = document.querySelector("#machine-score");
 
+// Inicializa as pontuações do jogador humano e da máquina
 let humanScoreNumber = 0;
 let machineScoreNumber = 0;
+
+// Definição das opções do jogo (pedra, papel, tesoura) usando um objeto
+let GAME_OPTIONS = {
+  ROCK: "rock",
+  PAPER: "paper",
+  SCISSORS: "scissors",
+};
 
 // Função que representa a escolha do jogador humano e inicia o jogo
 const playHuman = (humanChoice) => {
@@ -17,7 +25,11 @@ const playHuman = (humanChoice) => {
 // Função que gera a escolha aleatória da máquina entre "rock", "paper" e "scissors"
 const playMachine = () => {
   // Array com as opções possíveis para a máquina
-  const choices = [`rock`, `paper`, `scissors`];
+  const choices = [
+    GAME_OPTIONS.ROCK,
+    GAME_OPTIONS.PAPER,
+    GAME_OPTIONS.SCISSORS,
+  ];
   // Gera um número aleatório entre 0 e 2 para escolher uma opção do array
   const randomNumber = Math.floor(Math.random() * 3);
   // Exibe o número aleatório no console (para fins de depuração)
@@ -39,19 +51,21 @@ const playTheGame = (human, machine) => {
     // Se houver empate, chama a função showResult com a mensagem correspondente e o emoji de empate
     showResult("Vocês empataram seus frangos !! 😒", "./img/vc-empatou.gif");
   } else if (
-    (human === "paper" && machine === "rock") ||
-    (human === "rock" && machine === "scissors") ||
-    (human === "scissors" && machine === "paper")
+    (human === GAME_OPTIONS.PAPER && machine === GAME_OPTIONS.ROCK) ||
+    (human === GAME_OPTIONS.ROCK && machine === GAME_OPTIONS.SCISSORS) ||
+    (human === GAME_OPTIONS.SCISSORS && machine === GAME_OPTIONS.PAPER)
   ) {
+    // Incrementa a pontuação do jogador humano e atualiza a exibição
     humanScoreNumber++;
     humanScore.innerHTML = humanScoreNumber;
     // Se o jogador ganhar, chama a função showResult com a mensagem correspondente e o emoji de vitória
     showResult("Parabéns Fibrado, você Ganhou !! 😁", "./img/vc-ganhou.gif");
   } else {
+    // Incrementa a pontuação da máquina e atualiza a exibição
     machineScoreNumber++;
     machineScore.innerHTML = machineScoreNumber;
     // Se o jogador perder, chama a função showResult com a mensagem correspondente e o emoji de derrota
-    showResult("Aaa Você Perdeu  seu Frango !! 😣 ", "./img/vc-perdeu.gif");
+    showResult("Aaa Você Perdeu seu Frango !! 😣 ", "./img/vc-perdeu.gif");
   }
 };
 
