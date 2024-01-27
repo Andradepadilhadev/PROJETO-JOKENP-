@@ -3,80 +3,58 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 /* Estilo básico para o corpo da página */
 body {
-  display: inline;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  background-image: url("./img/imagen-background.png"); /* Imagem de fundo da página */
+
+  background-image: url('./img/imagen-background.png');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  overflow: hidden; /* Mantenha a rolagem padrão do corpo */
+  background-repeat: no-repeat;
 }
 
-/* Estilo para o título principal */
 /* Estilo para o título principal */
 h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
-  left: 50%; /* Posiciona o elemento no centro horizontalmente */
-  transform: translateX(-50%); /* Corrige o posicionamento usando translate */
-  margin: 0;
-  font-size: 11vh;
-  color: rgb(9, 48, 35);
+
+  font-size: clamp(0px, 11vw, 80px);
+
   animation: tada 12s infinite;
+
+  color: rgb(9, 48, 35);
 }
 
 h1 span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: rgb(99, 17, 119);
 }
 
-/* Estilo para o contêiner principal */
-.container {
-  position: fixed;
-  padding: 20px; /* Corrigido para 20 pixels */
-  border-radius: 10px;
+/* Estilo para o botão principal */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: clamp(0px, 15vw, 80px);
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.divResult {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-height: 100%;
-  width: 100%;
-}
-
-/* Estilo para o botão principal */
-button {
-  display: inline;
-  justify-content: center;
-  margin-top: 30vh;
-  font-size: 15vh;
-  cursor: pointer;
-  background-color: rgba(22, 119, 126, 0);
-  border: none;
-  border-radius: 18vh;
-  margin-top: -1vh;
-}
-
-/* Estilo para o parágrafo */
-p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 10vh;
-  position: relative;
-  font-size: 3vh;
-  margin-top: -50px; /* Ajuste conforme necessário */
 }
 
 /* Estilo para classes específicas de parágrafos */
@@ -92,17 +70,15 @@ p {
   animation: animate__flash 4s infinite;
 }
 .result {
+  text-align: center;
+
   color: rgba(99, 17, 119, 0.877);
 }
 
 /* Estilo para emojis */
 .emoji {
-  position: relative;
-  justify-content: center;
-  display: inline;
   width: 125px;
   height: 125px;
-  top: 50vh;
 }
 /* Animação de pulsação */
 @keyframes pulse {
@@ -135,84 +111,10 @@ p {
 }
 
 /* Adicione a seguinte parte para tornar a imagem de fundo responsiva */
-@media screen and (max-width: 610px) {
+@media (max-width: 768px) {
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+    justify-content: space-evenly;
 
-  h1 {
-    display: flex;
-    justify-content: center;
-    top: -5%;
-    left: -25vh;
-    font-size: 9vh;
+    height: 100vh;
   }
-
-  button {
-    padding: 3vw;
-    font-size: 7vw;
-    flex-direction: row;
-    margin-top: 18%;
-    left: 80vh;
-  }
-
-  p {
-    display: fixed;
-    justify-content: center;
-    align-items: center;
-    top: 10vh;
-    position: static;
-    font-size: 1vh;
-    margin-top: 20; /* Ajuste conforme necessário */
-  }
-}
-.emoji {
-  width: 100px;
-  height: 100px;
-  top: 4vh;
-  transform: translateY(-85%);
-}
-
-/* Adicione a seguinte parte para tornar a imagem de fundo responsiva */
-@media screen and (max-width: 610px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  h1 {
-    display: flex;
-    justify-content: center;
-    margin-top: -75%;
-    font-size: 8vh;
-  }
-
-  button {
-    padding: 3vw;
-    font-size: 11vw;
-    flex-direction: row;
-    margin-top: 30vh;
-    left: 80vh;
-  }
-
-  p {
-    display: fixed;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
-    position: static;
-    font-size: 2vh;
-    margin-top: -5vh; /* Ajuste conforme necessário */
-  }
-}
-.emoji {
-  width: 100px;
-  height: 100px;
-  top: 4vh;
-  transform: translateY(-85%);
 }
